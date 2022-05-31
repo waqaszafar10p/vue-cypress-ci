@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "test": "(cd e2e && npm run test-headless-single)",
-    "ui": "(cd hello-world && npm run serve) & npm run test"
+    "ui": "(cd hello-world && npm run serve) & npm run test",
+    "start": "cd hello-world && npm run serve"
   }
 }

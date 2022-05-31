@@ -1,0 +1,18 @@
+name: E2E
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Install root dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Start server in the background
+        run: npm start &
+
+      # Cypress has its own package.json in folder "e2e"
+      - name: Install Cypress and run tests
+        uses: cypress-io/github-action@v1
+        with:
+          working-directory: e2e

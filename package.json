@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "(cd e2e && npm run test-headless-single)",
-    "ui": "(cd hello-world && npm run serve) & npm run test",
-    "start": "cd hello-world && npm run serve"
+    "start": "(cd hello-world && npm run build) && http-server -c-1 -p 4700 hello-world/dist"
+  },
+  "dependencies": {
+    "http-server": "^14.1.0"
   }
 }

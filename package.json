@@ -1,0 +1,9 @@
+{
+  "name": "hello-scripts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "(cd e2e && npm run test-headless-single)",
+    "ui": "(cd hello-world && npm run serve) & npm run test"
+  }
+}

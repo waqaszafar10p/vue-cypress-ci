@@ -4,11 +4,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Install root dependencies
-        uses: bahmutov/npm-install@v1
+      - name: Fetch repo
+        uses: actions/checkout@master
+      - name: Install node
+        uses: actions/setup-node@master
+      - name: Install dependencies
         with:
-          useLockFile: false
+          working-directory: hello-world
+        run: npm install
+
+      - name: Build
+        with:
+          working-directory: hello-world
+        run: npm run build
+
 
       - name: Start server in the background
         run: npm start &

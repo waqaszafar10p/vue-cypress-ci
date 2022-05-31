@@ -8,11 +8,7 @@ jobs:
         uses: actions/checkout@master
       - name: Install node
         uses: actions/setup-node@master
-      - name: Install dependencies
-        with:
-          working-directory: hello-world
-        run: npm install
-
+        
       - name: Build
         with:
           working-directory: hello-world

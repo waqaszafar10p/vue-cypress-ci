@@ -7,6 +7,8 @@ jobs:
       - uses: actions/checkout@master
       - name: Install root dependencies
         uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
 
       - name: Start server in the background
         run: npm start &

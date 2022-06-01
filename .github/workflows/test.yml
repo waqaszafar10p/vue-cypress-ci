@@ -2,15 +2,18 @@ name: main
 on: [push]
 jobs:
   run:
-      name: RUN Application
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout Repo
-          uses: actions/checkout@master
-        - name: Create Node Environment
-          uses: actions/setup-node@master
-        - name: Install Packages and Build Application
-          run: |
-            npm install -g @vue/cli yarn
-            yarn install
-            yarn start
+    name: RUN Application
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Create Node Environment
+        uses: actions/setup-node@master
+      - name: Install MAIN Packages
+        run: npm install -g @vue/cli yarn
+      - name: Install hello world Packages and Build Application
+        working-directory: hello-world
+        run: yarn install
+      - name: run app
+        working-directory: hello-world
+        run: yarn start

@@ -11,6 +11,6 @@ jobs:
         uses: actions/setup-node@v2
       - name: run Node Environment
         run: |
-          npm run install
+          npm install
           npm run serve
         working-directory: ./hello-world

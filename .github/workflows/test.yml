@@ -16,4 +16,4 @@ jobs:
         run: yarn install
       - name: run app
         working-directory: hello-world
-        run: yarn start
+        run: yarn serve

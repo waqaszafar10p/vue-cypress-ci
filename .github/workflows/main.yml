@@ -5,13 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Create Node Environment
         uses: actions/setup-node@v2
+
+      - name: Install dependencies
         working-directory: ./hello-world
-      - run: npm ci
+        run: |
+          npm install
 
       - name: Create  cypress Environment
-        uses: actions/setup-node@v2
         working-directory: ./e2e
-      - run: npm ci
+        run: |
+          npm install

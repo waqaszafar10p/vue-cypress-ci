@@ -14,6 +14,6 @@ jobs:
       - name: Install hello world Packages and Build Application
         working-directory: hello-world
         run: yarn install
-      - name: run app
+      - name: run app ok
         working-directory: hello-world
         run: yarn serve

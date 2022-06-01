@@ -14,6 +14,10 @@ jobs:
       - name: Install MAIN Packages
         run: npm install -g @vue/cli yarn
       - name: Install hello world Packages and Build Application
+        with:
+          working-directory: hello-world
         run: yarn install
       - name: run app
+        with:
+          working-directory: hello-world
         run: yarn start

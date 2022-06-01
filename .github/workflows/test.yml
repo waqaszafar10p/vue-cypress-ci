@@ -1,16 +1,17 @@
 name: main
 on: [push]
 jobs:
-  cypress-run:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Fetch repo
-        uses: actions/checkout@master
-      - name: Install node
-        uses: actions/setup-node@master
-        with:
-          working-directory: hello-world
-      - name: Install dependencies
-        run: npm install
-      - name: run
-        run: npm run serve
+  run:
+      name: RUN Application
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repo
+          uses: actions/checkout@master
+        - name: Create Node Environment
+          uses: actions/setup-node@master
+        - name: Install Packages and Build Application
+          run: |
+            npm install -g @vue/cli
+            npm install
+            npm run serve
+            working-directory: hello-world

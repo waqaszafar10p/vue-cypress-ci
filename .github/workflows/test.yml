@@ -9,9 +9,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create Node Environment
         uses: actions/setup-node@v2
-
-      - uses: cypress-io/github-action@v3
-        with:
-          working-directory: hello-world
-      - run: npm install
-      - run: npm run serve
+        run: |
+          npm run install
+          npm run serve
+        working-directory: ./hello-world

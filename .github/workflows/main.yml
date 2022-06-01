@@ -18,3 +18,8 @@ jobs:
         working-directory: ./e2e
         run: |
           npm install
+
+      - name: Serve the app and run test  cypress
+        run: |
+          npm install
+          npm run ci

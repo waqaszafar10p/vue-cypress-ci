@@ -11,6 +11,6 @@ jobs:
           uses: actions/setup-node@master
         - name: Install Packages and Build Application
           run: |
-            npm install -g @vue/cli
-            npm install
-            npm run start
+            npm install -g @vue/cli yarn
+            yarn install
+            yarn start

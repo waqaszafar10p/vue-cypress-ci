@@ -1,0 +1,17 @@
+name: CI
+on: [push]
+jobs:
+  install-web-dep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Create Node Environment
+        uses: actions/setup-node@v2
+        working-directory: ./hello-world
+      - run: npm ci
+
+      - name: Create  cypress Environment
+        uses: actions/setup-node@v2
+        working-directory: ./e2e
+      - run: npm ci

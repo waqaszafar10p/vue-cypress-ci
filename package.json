@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "(cd hello-world && npm run build) && http-server -c-1 -p 4700 hello-world/dist"
+    "start-server": "(cd hello-world && npm run serve)",
+    "test": "(cd e2e && npm run test-headless)",
+    "ci": "start-server-and-test start-server http://localhost:4700 test"
   },
   "dependencies": {
     "http-server": "^14.1.0"
+  },
+  "devDependencies": {
+    "start-server-and-test": "^1.14.0"
   }
 }

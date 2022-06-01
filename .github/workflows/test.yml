@@ -9,6 +9,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create Node Environment
         uses: actions/setup-node@v2
+      - name: run Node Environment
         run: |
           npm run install
           npm run serve

@@ -6,18 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: Create Node Environment
-        uses: actions/setup-node@master
+        uses: actions/setup-node@v1
         with:
           working-directory: hello-world
-      - name: Install MAIN Packages
-        run: npm install -g @vue/cli yarn
-      - name: Install hello world Packages and Build Application
-        with:
-          working-directory: hello-world
-        run: yarn install
-      - name: run app
-        with:
-          working-directory: hello-world
-        run: yarn serve
+      - run: npm install
+      - run: npm run serve

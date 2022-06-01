@@ -20,4 +20,4 @@ jobs:
       - name: run app
         with:
           working-directory: hello-world
-        run: yarn start
+        run: yarn serve

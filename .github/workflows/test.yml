@@ -8,9 +8,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Create Node Environment
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
 
-      - uses: cypress-io/github-action@v2
+      - uses: cypress-io/github-action@v3
         with:
           working-directory: hello-world
       - run: npm install

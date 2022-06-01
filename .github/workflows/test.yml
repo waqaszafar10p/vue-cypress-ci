@@ -2,7 +2,6 @@ name: main
 on: [push]
 jobs:
   run:
-    working-directory: hello-world # The working directory path
     name: RUN Application
     runs-on: ubuntu-latest
     steps:
@@ -10,9 +9,11 @@ jobs:
         uses: actions/checkout@master
       - name: Create Node Environment
         uses: actions/setup-node@master
+        with:
+          working-directory: hello-world
       - name: Install MAIN Packages
         run: npm install -g @vue/cli yarn
       - name: Install hello world Packages and Build Application
         run: yarn install
-      - name: run app ok
-        run: yarn serve
+      - name: run app
+        run: yarn start

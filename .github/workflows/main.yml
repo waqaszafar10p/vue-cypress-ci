@@ -7,10 +7,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Create Node Environment
-        uses: actions/setup-node@v2
-
-      - name: install vue-cli
-        run: npm install -g @vue/cli
+        uses: actions/setup-node@master
 
       - name: Setup Go
         uses: actions/setup-go@v3

@@ -19,7 +19,7 @@ jobs:
 
       - name: install hello-world
         working-directory: ./hello-world
-        run: npm run install
+        run: npm install
 
       - name: build hello-world
         working-directory: ./hello-world

@@ -9,21 +9,18 @@ jobs:
       - name: Create Node Environment
         uses: actions/setup-node@v2
 
-      - name: install vue-cli
-        run: npm install -g @vue/cli
+      - name: install vue cli-service use for build
+        working-directory: ./hello-world
+        run: npm pm i @vue/cli-service
+        
+      - name: build hello-world
+        working-directory: ./hello-world
+        run: npm run build
 
       - name: Setup Go
         uses: actions/setup-go@v3
         with:
           go-version: "1.18.3"
-
-      - name: install hello-world
-        working-directory: ./hello-world
-        run: npm install
-
-      - name: build hello-world
-        working-directory: ./hello-world
-        run: npm run build
 
       - name: install cypress environment dependencies
         working-directory: ./e2e

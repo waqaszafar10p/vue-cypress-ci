@@ -9,6 +9,9 @@ jobs:
       - name: Create Node Environment
         uses: actions/setup-node@v2
 
+      - name: install vue-cli
+        run: npm install -g @vue/cli
+
       - name: Setup Go
         uses: actions/setup-go@v3
         with:

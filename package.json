@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start-server": "(cd hello-world && npm run serve)",
+    "start-server": "(cd go-server && go run main.go)",
     "test": "(cd e2e && npm run test-headless)",
-    "ci": "start-server-and-test start-server http://localhost:4700 test"
+    "ci": "start-server-and-test start-server http://localhost:4700 test",
+    "ci-2": "start-server-and-test start-server http://localhost:3050 test"
   },
   "dependencies": {
     "http-server": "^14.1.0"

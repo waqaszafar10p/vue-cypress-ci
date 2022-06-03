@@ -9,9 +9,14 @@ jobs:
       - name: Create Node Environment
         uses: actions/setup-node@v2
 
-      - name: Install hello-wordl vue app dependencies
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ‘1.18.3
+
+      - name: build hello-world
         working-directory: ./hello-world
-        run: npm install
+        run: npm run build
 
       - name: install cypress environment dependencies
         working-directory: ./e2e
@@ -20,4 +25,4 @@ jobs:
       - name: Serve the app and run test  cypress
         run: |
           npm install
-          npm run ci
+          npm run ci-2

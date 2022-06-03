@@ -11,7 +11,7 @@ jobs:
 
       - name: install vue cli-service use for build
         working-directory: ./hello-world
-        run: npm pm i @vue/cli-service
+        run: npm i @vue/cli-service
         
       - name: build hello-world
         working-directory: ./hello-world

@@ -10,7 +10,6 @@ jobs:
         uses: actions/setup-node@v2
 
       - name: install vue-cli
-        working-directory: ./hello-world
         run: npm install -g @vue/cli
 
       - name: Setup Go
@@ -18,13 +17,17 @@ jobs:
         with:
           go-version: "1.18.3"
 
-      - name: install cypress environment dependencies
-        working-directory: ./e2e
-        run: npm install
+      - name: install hello-world
+        working-directory: ./hello-world
+        run: npm run install
 
       - name: build hello-world
         working-directory: ./hello-world
         run: npm run build
+
+      - name: install cypress environment dependencies
+        working-directory: ./e2e
+        run: npm install
 
       - name: Serve the app and run test  cypress
         run: |
